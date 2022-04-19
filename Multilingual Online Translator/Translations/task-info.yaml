@@ -138,5 +138,8 @@ files:
         TranslatorTest('translator.translator').run_tests()
   learner_created: false
 feedback_link: https://hyperskill.org/projects/99/stages/545/implement#comment
-status: Unchecked
+status: Solved
+feedback:
+  message: Congratulations!
+  time: Tue, 19 Apr 2022 19:59:43 UTC
 record: -1
