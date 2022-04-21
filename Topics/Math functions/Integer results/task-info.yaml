@@ -1,11 +1,11 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: fabs
+- text: floor
 - text: ceil
 - text: sqrt
 - text: pow
-- text: floor
+- text: fabs
 files:
 - name: main.py
   visible: true

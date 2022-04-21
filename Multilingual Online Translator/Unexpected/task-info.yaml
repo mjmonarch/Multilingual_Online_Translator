@@ -1,11 +1,6 @@
 type: edu
 custom_name: stage7
 files:
-- name: translator/translator.py
-  visible: true
-  text: |
-    print('Hello, World!')
-  learner_created: false
 - name: tests.py
   visible: false
   text: |
@@ -183,6 +178,194 @@ files:
     if __name__ == '__main__':
         TranslatorTest('translator.translator').run_tests()
   learner_created: false
-feedback_link: https://hyperskill.org/projects/99/stages/549/implement#comment
-status: Unchecked
+- name: translator/hello.txt
+  visible: true
+  text: |+
+    arabic Translations:
+    مرحبا
+
+    arabic Examples:
+    margot, say hello to pavlov.
+    (مارجوت)،قولي مرحبًا لـ (بافالوف).
+
+    german Translations:
+    hallo
+
+    german Examples:
+    Finally got a personalized hello from Earl.
+    Ich habe endlich ein personifiziertes hallo von Earl bekommen.
+
+    spanish Translations:
+    hola
+
+    spanish Examples:
+    Well, hello, Miss Anchor-liar.
+    Bien, hola, señorita presentadora de mentiras.
+
+    french Translations:
+    bonjour
+
+    french Examples:
+    Goodbye England and hello the Netherlands...
+    Au revoir l'Angleterre et bonjour les Pays-Bas...
+
+    hebrew Translations:
+    שלום
+
+    hebrew Examples:
+    How come they never say hello?
+    איך זה שהן אף פעם לא אומרות שלום.
+
+    japanese Translations:
+    こんにちは
+
+    japanese Examples:
+    The little boy said hello to me.
+    小さな男の子が私にこんにちはと言った。
+
+    dutch Translations:
+    gedag
+
+    dutch Examples:
+    Flirting with every girl says hello.
+    Die flirt met elk meisje dat gedag zegt.
+
+    polish Translations:
+    cześć
+
+    polish Examples:
+    You had me at "hello".
+    Wystarczyło mi twoje "cześć".
+
+    portuguese Translations:
+    olá
+
+    portuguese Examples:
+    That was my last kiss hello.
+    Pois eu garanto que aquele foi o meu último beijo de olá.
+
+    romanian Translations:
+    salut
+
+    romanian Examples:
+    I came by to say hello.
+    Am avut o pauză de masă și am trecut să te salut.
+
+    russian Translations:
+    привет
+
+    russian Examples:
+    Tell her slipping' Jimmy says hello.
+    Передай ей, что Скользкий Джимми передает ей привет.
+
+    turkish Translations:
+    selam
+
+    turkish Examples:
+    Mash Sultan Ali, she said hello.
+    Meş Sultan Ali, kız selam verdi.
+
+  learner_created: true
+- name: translator/Wednesday.txt
+  visible: true
+  text: |+
+    Arabic Translations:
+    الأربعاء
+
+    Arabic Examples:
+    You Can Have One Tuesday Or Wednesday Night
+    تستطيعين أن تختاري ليلة الثلاثاء أو الاربعاء مرة كل اسبوعان
+
+    German Translations:
+    Mittwoch
+
+    German Examples:
+    My brother-in-law passed away last Wednesday.
+    Mein Schwager ist letzten Mittwoch von uns gegangen.
+
+    Spanish Translations:
+    miércoles
+
+    Spanish Examples:
+    He reserves Wednesday afternoons for employee interviews.
+    Él reserva los miércoles por la tarde para las entrevistas de los empleados.
+
+    French Translations:
+    mercredi
+
+    French Examples:
+    We had another shooting last Wednesday.
+    Nous avons eu encore une autre fusillade mercredi dernier.
+
+    Hebrew Translations:
+    יום רביעי
+
+    Hebrew Examples:
+    Penn Station South Wednesday, January 21
+    תחנת פן דרום יום רביעי, 21 בינואר
+
+    Japanese Translations:
+    水曜日
+
+    Japanese Examples:
+    Wednesday Evening Customer Appreciation Event featuring Billy Crystal
+    水曜日の夕方：Billy　Crystal氏を招いてのお客様感謝イベント
+
+    Dutch Translations:
+    woensdag
+
+    Dutch Examples:
+    MEPs will vote Wednesday from 1200.
+    De parlementsleden zullen op woensdag om 12.00 uur over de richtlijn stemmen.
+
+    Polish Translations:
+    środa
+
+    Polish Examples:
+    CIBERSEG: Wednesday 23 January 2019.
+    Ciberseg: środa, 23 stycznia 2019 r.
+
+    Portuguese Translations:
+    quarta-feira
+
+    Portuguese Examples:
+    It replaced the Wednesday night movie.
+    Isso substituiu o filme das noites de Quarta-feira.
+
+    Romanian Translations:
+    miercuri
+
+    Romanian Examples:
+    Drinks Wednesday night, so keep Thursday morning clear.
+    Bem ceva miercuri seara, așa că păstrează joi dimineața liberă.
+
+    Russian Translations:
+    среда
+
+    Russian Examples:
+    Wednesday, 24 November 2010 (postponed).
+    Среда, 24 ноября 2010 года (переносится на более позднюю дату).
+
+    Turkish Translations:
+    çarşamba
+
+    Turkish Examples:
+    Every Wednesday, with Luc Apfel.
+    Her çarşamba, Luc Apfel ile Hızlı Şerit...
+
+  learner_created: true
+- name: translator/translator.py
+  visible: true
+  text: |
+    print('Hello, World!')
+  learner_created: false
+- name: translator/brrrrrrrrrrrr.txt
+  visible: true
+  learner_created: true
+feedback_link: https://hyperskill.org/learn/step/8976#comment
+status: Solved
+feedback:
+  message: Well done! You've finished the project. Select a new project on <a href="https://hyperskill.org/projects">JetBrains
+    Academy</a> to continue learning.
+  time: Thu, 21 Apr 2022 08:18:33 UTC
 record: -1

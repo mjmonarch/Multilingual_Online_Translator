@@ -1,12 +1,12 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: abs
-- text: sin, cos
-- text: sqrt
 - text: min, max
-- text: mean
 - text: fabs
+- text: sqrt
+- text: abs
+- text: mean
+- text: sin, cos
 files:
 - name: main.py
   visible: true

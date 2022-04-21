@@ -246,6 +246,85 @@
 # print(translated_text)
 
 # --------------------------------------------- STAGE 6 ---------------------------------------------
+# import requests
+# from bs4 import BeautifulSoup
+# import argparse
+# import copy
+#
+# LANGUAGES_FROM = ['arabic', 'german', 'english', 'spanish', 'french', 'hebrew', 'japanese', 'dutch', 'polish',
+#              'portuguese', 'romanian', 'russian', 'turkish']
+# LANGUAGES_TO = ['arabic', 'german', 'english', 'spanish', 'french', 'hebrew', 'japanese', 'dutch', 'polish',
+#              'portuguese', 'romanian', 'russian', 'turkish', 'all']
+#
+# REVERSE_CONTEXT_URL = 'https://context.reverso.net/translation/'
+# translate_to_all_languages = False
+#
+#
+# def get_translated_text(word, first_lang, second_lang, q):
+#     # creating request
+#     headers = {'User-Agent': 'Chrome/100.0'}
+#     url_adr = REVERSE_CONTEXT_URL + first_lang.lower() + '-' + second_lang.lower() + '/' + word
+#     try:
+#         r = requests.get(url_adr, headers=headers)
+#     except ValueError:
+#         print("Invalid resource!")
+#
+#     output = ''
+#     if r.status_code == 200:
+#         soup = BeautifulSoup(r.content, 'html.parser')
+#         translations_list = []
+#         examples_list = []
+#         for elem in soup.find('div', {'id': 'translations-content'}):
+#             text = elem.text.strip()
+#             if text:
+#                 translations_list.append(text)
+#         for elem in soup.find('section', {'id': 'examples-content'}).find_all('span', {'class': 'text'}):
+#             text = elem.text.strip()
+#             if text:
+#                 examples_list.append(text)
+#         output = f"{second_lang} Translations:\n"
+#         for i in range(q):
+#             output += translations_list[i] + '\n'
+#         output += '\n'
+#         output += f"{second_lang} Examples:\n"
+#         for i, example in enumerate(examples_list[:q*2]):
+#             output += example + '\n'
+#             if i % 2 == 1:
+#                 output += '\n'
+#     else:
+#         print("Something went wrong while parsing")
+#     return output
+#
+#
+# parser = argparse.ArgumentParser()
+# parser.add_argument("lang_1", choices=LANGUAGES_FROM)
+# parser.add_argument("lang_2", choices=LANGUAGES_TO)
+# parser.add_argument("word")
+#
+# args = parser.parse_args()
+# first_lang = args.lang_1
+# if args.lang_2 == 'all':
+#     translate_to_all_languages = True
+# else:
+#     second_lang = args.lang_2
+# word = args.word
+#
+# if not translate_to_all_languages:
+#     translated_text = get_translated_text(word, first_lang, second_lang, 5)
+# else:
+#     translated_text = ''
+#     for lang in LANGUAGES_FROM:
+#         if lang != first_lang:
+#             translated_text += get_translated_text(word, first_lang, lang, 1)
+#
+# file_name = word + ".txt"
+# with open(file_name, 'w', encoding='utf-8') as writer:
+#     writer.write(translated_text)
+# print(translated_text)
+
+# --------------------------------------------- STAGE 7 ---------------------------------------------
+import sys
+
 import requests
 from bs4 import BeautifulSoup
 import argparse
@@ -291,22 +370,45 @@ def get_translated_text(word, first_lang, second_lang, q):
             output += example + '\n'
             if i % 2 == 1:
                 output += '\n'
+    elif r.status_code == 404:
+        print(f"Sorry, unable to find {args.word}")
+        exit()
     else:
-        print("Something went wrong while parsing")
+        print("Something wrong with your internet connection")
+        exit()
     return output
 
 
-parser = argparse.ArgumentParser()
-parser.add_argument("lang_1", choices=LANGUAGES_FROM)
-parser.add_argument("lang_2", choices=LANGUAGES_TO)
-parser.add_argument("word")
+parser = argparse.ArgumentParser(
+    description="Translates the given word from the given language to another given language",
+    exit_on_error=False)
+parser.add_argument("lang_1",
+                    help="Language to translate from")
+parser.add_argument("lang_2",
+                    help="Language to translate to, setup all to translate to all available languages")
+parser.add_argument("word",
+                    help="Word to translate")
 
-args = parser.parse_args()
-first_lang = args.lang_1
-if args.lang_2 == 'all':
-    translate_to_all_languages = True
+try:
+    args = parser.parse_args()
+except argparse.ArgumentError:
+    print(f"Sorry, incorrect arguments")
+    exit()
+
+# check if the program run with appropriate language to translate from
+if args.lang_1 not in LANGUAGES_FROM:
+    print(f"Sorry, the program doesn't support {args.lang_1}")
+    exit()
 else:
-    second_lang = args.lang_2
+    first_lang = args.lang_1
+if args.lang_2 not in LANGUAGES_TO:
+    print(f"Sorry, the program doesn't support {args.lang_2}")
+    exit()
+else:
+    if args.lang_2 == 'all':
+        translate_to_all_languages = True
+    else:
+        second_lang = args.lang_2
 word = args.word
 
 if not translate_to_all_languages:

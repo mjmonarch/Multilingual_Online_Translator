@@ -1,13 +1,13 @@
 type: choice
 is_multiple_choice: true
 options:
-- text: floor
-- text: sin
 - text: min
 - text: max
+- text: floor
 - text: round
-- text: ceil
 - text: abs
+- text: sin
+- text: ceil
 files:
 - name: main.py
   visible: true
